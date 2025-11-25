@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane prefHeight="700" prefWidth="1200" style="-fx-background-color: #F5E6D3;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+
+    <!-- Header Bar -->
+    <HBox alignment="CENTER_LEFT" layoutX="0" layoutY="0" prefHeight="70" prefWidth="1200" spacing="20" style="-fx-background-color: #6A5436; -fx-padding: 0 30;">
+        
+        <!-- Profile Circle -->
+        <HBox alignment="CENTER" spacing="10">
+            <Rectangle arcHeight="50" arcWidth="50" fill="WHITE" height="40" width="40" />
+            <Label fx:id="lblUserRole" style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" text="Peminjam" />
+        </HBox>
+        
+        <!-- Spacer -->
+        <HBox HBox.hgrow="ALWAYS" />
+        
+        <!-- Logout Button -->
+        <Button fx:id="btnLogout" onAction="#handleLogout" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 16px; -fx-cursor: hand;" text="Log out" />
+    </HBox>
+
+    <!-- Main Content -->
+    <VBox layoutX="0" layoutY="70" prefHeight="630" prefWidth="1200" spacing="20" style="-fx-padding: 30;">
+        
+        <!-- SIMAK Title & Search Bar -->
+        <HBox alignment="CENTER_LEFT" spacing="30">
+            <Label fx:id="lblSimak" onMouseClicked="#handleSimakClick" style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: #6A5436; -fx-cursor: hand;" text="SIMAK" />
+            <TextField fx:id="txtSearch" prefHeight="40" prefWidth="900" promptText="pencarian" style="-fx-background-color: #D9CBC1; -fx-background-radius: 10; -fx-font-size: 16px; -fx-padding: 10;" />
+        </HBox>
+
+        <!-- Menu Buttons -->
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <Button fx:id="btnDashboard" onAction="#handleDashboard" prefHeight="50" prefWidth="180" style="-fx-background-color: #D9CBC1; -fx-background-radius: 25; -fx-font-size: 16px; -fx-font-weight: bold; -fx-cursor: hand;" text="Dashboard" />
+            <Button fx:id="btnPeminjaman" onAction="#handlePeminjaman" prefHeight="50" prefWidth="180" style="-fx-background-color: #D9CBC1; -fx-background-radius: 25; -fx-font-size: 16px; -fx-font-weight: bold; -fx-cursor: hand;" text="Peminjaman" />
+            <Button fx:id="btnLaporan" onAction="#handleLaporan" prefHeight="50" prefWidth="180" style="-fx-background-color: #D9CBC1; -fx-background-radius: 25; -fx-font-size: 16px; -fx-font-weight: bold; -fx-cursor: hand;" text="Laporan" />
+            <Button fx:id="btnDataBarang" onAction="#handleDataBarang" prefHeight="50" prefWidth="180" style="-fx-background-color: #D9CBC1; -fx-background-radius: 25; -fx-font-size: 16px; -fx-font-weight: bold; -fx-cursor: hand;" text="Data Barang" />
+        </HBox>
+
+        <!-- News/Banner Section -->
+        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 20 0;">
+            
+            <!-- Red Box (News 1) -->
+            <VBox alignment="CENTER" prefHeight="250" prefWidth="350" style="-fx-background-color: #D9696F; -fx-background-radius: 15;">
+                <Label style="-fx-text-fill: white; -fx-font-size: 32px; -fx-font-weight: bold;" text="TELAH HILANG" />
+                <Label style="-fx-text-fill: white; -fx-font-size: 48px; -fx-font-weight: bold;" text="KEPERCAYAAN" />
+            </VBox>
+            
+            <!-- White Box (News 2) -->
+            <VBox alignment="CENTER" prefHeight="250" prefWidth="350" style="-fx-background-color: white; -fx-background-radius: 15;">
+                <Label style="-fx-text-fill: #6A5436; -fx-font-size: 24px; -fx-font-weight: bold;" text="BERITA 2" />
+                <Label style="-fx-text-fill: #6A5436; -fx-font-size: 16px;" text="Konten berita kedua" />
+            </VBox>
+            
+            <!-- Gray Box (News 3) -->
+            <VBox alignment="CENTER" prefHeight="250" prefWidth="350" style="-fx-background-color: #C9C9C9; -fx-background-radius: 15;">
+                <Label style="-fx-text-fill: #6A5436; -fx-font-size: 24px; -fx-font-weight: bold;" text="BERITA 3" />
+                <Label style="-fx-text-fill: #6A5436; -fx-font-size: 16px;" text="Konten berita ketiga" />
+            </VBox>
+        </HBox>
+
+        <!-- Rekomendasi Section -->
+        <VBox spacing="15">
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #6A5436;" text="Rekomendasi" />
+            
+            <!-- Barang Cards -->
+            <HBox spacing="20">
+                
+                <!-- Card 1: Handy Talky -->
+                <VBox alignment="CENTER" onMouseClicked="#handleBarang1" prefHeight="220" prefWidth="260" spacing="10" style="-fx-background-color: #D9CBC1; -fx-background-radius: 15; -fx-padding: 15; -fx-cursor: hand;">
+                    <Rectangle arcHeight="20" arcWidth="20" fill="WHITE" height="120" width="220" />
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Handy Talky" />
+                    <Label style="-fx-font-size: 14px;" text="Stok: 7" />
+                    <Label style="-fx-font-size: 14px;" text="Status: Tersedia" />
+                    <Label style="-fx-font-size: 14px;" text="Pemilik: Lembaga" />
+                </VBox>
+                
+                <!-- Card 2: Proyektor -->
+                <VBox alignment="CENTER" onMouseClicked="#handleBarang2" prefHeight="220" prefWidth="260" spacing="10" style="-fx-background-color: #D9CBC1; -fx-background-radius: 15; -fx-padding: 15; -fx-cursor: hand;">
+                    <Rectangle arcHeight="20" arcWidth="20" fill="WHITE" height="120" width="220" />
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Proyektor" />
+                    <Label style="-fx-font-size: 14px;" text="Stok: 2" />
+                    <Label style="-fx-font-size: 14px;" text="Status: Tersedia" />
+                    <Label style="-fx-font-size: 14px;" text="Pemilik: Lembaga" />
+                </VBox>
+                
+                <!-- Card 3: Terminal Listrik -->
+                <VBox alignment="CENTER" onMouseClicked="#handleBarang3" prefHeight="220" prefWidth="260" spacing="10" style="-fx-background-color: #D9CBC1; -fx-background-radius: 15; -fx-padding: 15; -fx-cursor: hand;">
+                    <Rectangle arcHeight="20" arcWidth="20" fill="WHITE" height="120" width="220" />
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Terminal Listrik 10m" />
+                    <Label style="-fx-font-size: 14px;" text="Stok: 3" />
+                    <Label style="-fx-font-size: 14px;" text="Status: Tersedia" />
+                    <Label style="-fx-font-size: 14px;" text="Pemilik: HMST" />
+                </VBox>
+                
+                <!-- Card 4: Tenda -->
+                <VBox alignment="CENTER" onMouseClicked="#handleBarang4" prefHeight="220" prefWidth="260" spacing="10" style="-fx-background-color: #D9CBC1; -fx-background-radius: 15; -fx-padding: 15; -fx-cursor: hand;">
+                    <Rectangle arcHeight="20" arcWidth="20" fill="WHITE" height="120" width="220" />
+                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Tenda" />
+                    <Label style="-fx-font-size: 14px;" text="Stok: 1" />
+                    <Label style="-fx-font-size: 14px;" text="Status: Tersedia" />
+                    <Label style="-fx-font-size: 14px;" text="Pemilik: HIMAUDI" />
+                </VBox>
+                
+            </HBox>
+        </VBox>
+
+    </VBox>
+
+</AnchorPane>

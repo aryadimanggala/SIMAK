@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane prefHeight="500" prefWidth="900" style="-fx-background-color: #6A5436;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+
+    <VBox layoutX="50.0" layoutY="15.0" prefHeight="440" prefWidth="800" spacing="20" style="-fx-background-color: white; -fx-background-radius: 20;">
+
+        <Label alignment="CENTER" maxWidth="Infinity" prefHeight="0.0" prefWidth="633.0" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;                       -fx-background-color: #B49A86; -fx-padding: 15;                       -fx-background-radius: 20 20 0 0;" text="Selamat Datang di SIMAK" />
+
+        <HBox alignment="CENTER" spacing="50" style="-fx-padding: 40;">
+            <Circle fill="#B49A86" radius="150" />
+
+            <VBox maxWidth="350" spacing="20">
+
+                <Label fx:id="lblStatus" style="-fx-font-size: 16px;" />
+
+                <TextField fx:id="txtUsername" promptText="username" style="-fx-background-radius: 10; -fx-font-size: 16px;" />
+
+                <PasswordField fx:id="txtPassword" promptText="password" style="-fx-background-radius: 10; -fx-font-size: 16px;" />
+
+                <Button onAction="#handleLogin" style="-fx-background-color: #B49A86; -fx-text-fill: white;                                -fx-font-size: 18px; -fx-background-radius: 10;" text="Login" />
+            </VBox>
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>
